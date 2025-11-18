@@ -1,0 +1,22 @@
+.app-container {
+  margin: 0;
+  padding: 0;
+}
+
+.home-banner {
+  width: 100%;
+  display: block;
+  margin-top: 0; /* ✅ Remove extra gap */
+}
+
+body {
+ 
+  padding-top: 70px;
+  background-color: #99c6fa;
+}
+
+
+.page-container {
+  margin-top: 0;
+  padding: 20px;
+}

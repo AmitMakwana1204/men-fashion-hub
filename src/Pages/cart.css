@@ -1,0 +1,102 @@
+/* Cart.css */
+
+.cart-container {
+  max-width: 900px;
+  width: 100vw;
+  margin: 20px auto;
+  padding: 20px;
+  place-items: center;
+  background-color: #b9f1f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cart-empty {
+  text-align: center;
+  font-size: 18px;
+  color: #353333;
+  margin-top: 40px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  gap: 10px;
+}
+
+.cart-item div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* ✅ Space between input and Remove button */
+}
+
+.cart-item h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.cart-item p {
+  font-size: 18px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.cart-item input {
+  width: 60px;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cart-item button {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item button:hover {
+  background-color: #cc0000;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* ✅ Responsive for mobile */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cart-item input {
+    width: 100%;
+  }
+
+  .cart-total {
+    text-align: center;
+  }
+}
