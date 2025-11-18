@@ -1,5 +1,6 @@
 /* Cart.css */
 
+
 .cart-container {
   max-width: 900px;
   width: 100vw;
@@ -84,8 +85,14 @@
   color: #333;
 }
 
+
 /* ✅ Responsive for mobile */
 @media (max-width: 768px) {
+  .cart-container {
+    width: 95%;
+    padding: 15px;
+  }
+
   .cart-item {
     flex-direction: column;
     align-items: flex-start;
@@ -98,5 +105,9 @@
 
   .cart-total {
     text-align: center;
+  }
+
+  .cart-container h1 {
+    font-size: 1.5rem;
   }
 }

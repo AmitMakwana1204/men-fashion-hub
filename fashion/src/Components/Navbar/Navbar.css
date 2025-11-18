@@ -20,7 +20,7 @@ body {
   margin-bottom: 0;
   align-items: center;
   padding: 10px 20px; /* Space on left & right */
-  background-color: #dadff5;
+  background-color: #badaff;
   border-bottom: 1px solid #000000;
   position: fixed; /* Stays at top */
   top: 0;
@@ -54,7 +54,7 @@ body {
 }
 
 .nav-menu li a {
-  text-decoration: none; /* ✅ underline remove */
+  text-decoration: double; /* ✅ underline remove */
   color: #000000;           /* link color */
   font-weight: bold;
   font-size: 25px;

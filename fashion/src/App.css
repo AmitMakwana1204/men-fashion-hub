@@ -9,9 +9,16 @@
   margin-top: 0; /* ✅ Remove extra gap */
 }
 
+  
 body {
- 
+
+  margin: 0;
+  display: flex;
+  place-items: center;
   padding-top: 70px;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #c7eaf5; /* ✅ Add this */
 }
 
 
