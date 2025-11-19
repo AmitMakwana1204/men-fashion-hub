@@ -4,7 +4,7 @@ import Navbar from './Components/Navbar/Navbar'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Shirt from './Pages/Shirt';
 import Pent from './Pages/Pent';
-import Login from './Pages/login';
+import Login from './Pages/login'
 import SignupForm from './Pages/SignupForm';
 import Cart from './Pages/cart';
 import { CartProvider } from './Pages/Cartcontext';
