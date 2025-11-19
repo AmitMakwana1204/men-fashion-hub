@@ -11,6 +11,7 @@ const Cart = () => {
   );
 
   return (
+    <div className="cart-page">
     <div className="cart-container">
       <h1>Your Cart</h1>
 
@@ -49,6 +50,7 @@ const Cart = () => {
       )}
 
       <h2 className="cart-total">Total: ₹{totalPrice}</h2>
+    </div>
     </div>
   );
 };
