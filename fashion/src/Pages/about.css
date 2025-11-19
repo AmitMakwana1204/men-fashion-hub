@@ -1,0 +1,151 @@
+.about-wrapper {
+  font-family: "Poppins", sans-serif;
+  padding-top: 80px;
+  background: #f7f8fc;
+}
+
+/* HERO */
+.about-hero {
+  text-align: center;
+  padding: 70px 20px;
+  background: linear-gradient(to right, #005eff, #00b7ff);
+  color: white;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.about-hero p {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+/* STORY SECTION */
+.about-story {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 70px 8%;
+  gap: 40px;
+}
+
+.story-content h2 {
+  font-size: 2.4rem;
+  color: #002155;
+}
+
+.story-content p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #444;
+  line-height: 1.7;
+}
+
+.story-image img {
+  width: 480px;
+  border-radius: 15px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* MISSION & VALUES */
+.mission-values {
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 40px;
+  gap: 25px;
+}
+
+.mv-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.mv-card:hover {
+  transform: translateY(-7px);
+}
+
+/* WHY US */
+.why-us {
+  padding: 70px 8%;
+}
+
+.why-us ul li {
+  margin: 12px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 8%;
+  text-align: center;
+}
+
+.stat-card h1 {
+  font-size: 3rem;
+  color: #005eff;
+}
+
+/* TEAM */
+.team-section {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.team-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.team-card img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-card:hover {
+  transform: scale(1.06);
+}
+
+/* CTA */
+.cta {
+  padding: 70px 8%;
+  background: linear-gradient(to right, #0072ff, #00d4ff);
+  text-align: center;
+  color: white;
+}
+
+.cta button {
+  padding: 12px 28px;
+  margin-top: 20px;
+  background: #00234d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

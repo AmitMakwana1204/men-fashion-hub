@@ -1,61 +1,218 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #ffffff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ----------------------------------------------------
+   GLOBAL RESET + BASE THEME
+---------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #f5c7c7; /* ✅ Add this */
+  font-family: "Poppins", sans-serif;
+  background: #f7f9fc;
+  color: #222;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Remove blue highlight when clicking in mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
+/* ----------------------------------------------------
+   SCROLLBAR STYLING
+---------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e8e8e8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+/* ----------------------------------------------------
+   GLOBAL CONTAINER
+---------------------------------------------------- */
+.container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* ----------------------------------------------------
+   BUTTONS
+---------------------------------------------------- */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: 0.3s ease;
 }
-button:hover {
-  border-color: #646cff;
+
+.primary-btn {
+  background: #111;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 5px;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.primary-btn:hover {
+  background: #333;
 }
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #fffdfd;
+
+/* ----------------------------------------------------
+   PRODUCT CARD BASE STYLE
+---------------------------------------------------- */
+.product-card {
+  width: 100%;
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #777;
+}
+
+.product-card .price {
+  color: #111;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.product-card button {
+  background: #111;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* ----------------------------------------------------
+   CART GLOBAL STYLE
+---------------------------------------------------- */
+.cart-page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.cart-item {
+  background: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+}
+
+.cart-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.cart-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.qty-btn {
+  background: #111;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 5px;
+}
+
+.remove-btn {
+  background: red;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 5px;
+}
+
+/* ----------------------------------------------------
+   AUTH FORM (Login / Signup)
+---------------------------------------------------- */
+.auth-container {
+  max-width: 420px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 1px 12px rgba(0,0,0,0.1);
+}
+
+.auth-container h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE DESIGN
+---------------------------------------------------- */
+@media (max-width: 768px) {
+  .product-card img {
+    height: 180px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cart-item img {
+    width: 100px;
+    height: 100px;
   }
 }

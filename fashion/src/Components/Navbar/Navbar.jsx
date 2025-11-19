@@ -3,9 +3,11 @@ import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../Assets/images/logo.png";
 import cart from "../Assets/images/cart.png";
+import { useCart } from "../../Pages/Cartcontext";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { totalItems } = useCart();
 
   return (
     <nav className="navbar">
@@ -42,7 +44,12 @@ const Navbar = () => {
             Pants
           </NavLink>
         </li>
-      </ul>
+        <li>
+           <NavLink to="/about" onClick={() => setMenuOpen(false)}>
+            About Us
+           </NavLink>
+       </li>
+       </ul>
 
       {/* Right side: Login + Cart */}
       <div className="nav-login-cart">
@@ -51,7 +58,7 @@ const Navbar = () => {
         </Link>
         <Link to="/cart" className="cart-box">
           <img src={cart} alt="Cart" />
-          <span className="cart-count">0</span>
+          <span className="cart-count">{totalItems}</span>
         </Link>
       </div>
     </nav>
