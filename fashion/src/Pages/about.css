@@ -1,151 +1,235 @@
+/* ================= Global Wrapper ================= */
 .about-wrapper {
   font-family: "Poppins", sans-serif;
-  padding-top: 80px;
-  background: #f7f8fc;
+  padding-top: 0;
+  background: linear-gradient(135deg, #eef2ff, #f7f9ff);
+  overflow-x: hidden;
 }
 
-/* HERO */
+/* ================= HERO SECTION ================= */
 .about-hero {
   text-align: center;
-  padding: 70px 20px;
-  background: linear-gradient(to right, #005eff, #00b7ff);
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #005eff, #00c6ff, #00eaff);
   color: white;
+  border-radius: 0 0 40px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: -40px;
+  left: -10%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22), transparent 70%);
+  animation: heroGlow 6s infinite alternate;
+}
+
+@keyframes heroGlow {
+  from { transform: translateX(-30px); }
+  to { transform: translateX(30px); }
 }
 
 .about-hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 3.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 .about-hero p {
-  font-size: 1.3rem;
-  margin-top: 10px;
+  font-size: 1.35rem;
+  margin-top: 12px;
+  opacity: 0.9;
 }
 
-/* STORY SECTION */
+/* ================= STORY SECTION ================= */
 .about-story {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 70px 8%;
-  gap: 40px;
+  padding: 80px 8%;
+  gap: 60px;
+  animation: fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(35px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .story-content h2 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
+  font-weight: 700;
   color: #002155;
 }
 
 .story-content p {
-  font-size: 1.1rem;
-  margin-top: 10px;
+  font-size: 1.15rem;
+  margin-top: 12px;
   color: #444;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .story-image img {
-  width: 480px;
-  border-radius: 15px;
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.25);
+  width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.22);
+  transition: 0.4s ease;
 }
 
-/* MISSION & VALUES */
+.story-image img:hover {
+  transform: scale(1.05);
+}
+
+/* ================= MISSION & VALUES ================= */
 .mission-values {
-  padding: 60px 8%;
+  padding: 80px 8%;
   text-align: center;
+}
+
+.mission-values h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .mv-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  margin-top: 40px;
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 50px;
+  gap: 35px;
 }
 
 .mv-card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  transition: 0.4s ease;
+  transform: translateY(0);
 }
 
 .mv-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-15px) scale(1.03);
 }
 
-/* WHY US */
+/* ================= WHY US ================= */
 .why-us {
-  padding: 70px 8%;
+  padding: 90px 8%;
+  background: linear-gradient(135deg, #ffffff, #e9f0ff);
+  border-radius: 25px;
+  margin: 50px 5%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 .why-us ul li {
-  margin: 12px 0;
-  font-size: 1.2rem;
+  margin: 15px 0;
+  font-size: 1.25rem;
   color: #333;
+  padding: 8px 0;
 }
 
-/* STATS */
+/* ================= STATS ================= */
 .stats {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  padding: 60px 8%;
+  gap: 60px;
+  padding: 80px 8%;
   text-align: center;
 }
 
-.stat-card h1 {
-  font-size: 3rem;
-  color: #005eff;
+.stat-card {
+  background: linear-gradient(145deg, #ffffff, #dfe8ff);
+  padding: 40px 30px;
+  border-radius: 18px;
+  width: 230px;
+  box-shadow: 0 8px 25px rgba(0,0,70,0.15);
+  transition: 0.4s ease;
 }
 
-/* TEAM */
+.stat-card:hover {
+  transform: translateY(-15px);
+}
+
+.stat-card h1 {
+  font-size: 3.4rem;
+  color: #005eff;
+  font-weight: 800;
+}
+
+/* ================= TEAM SECTION ================= */
 .team-section {
-  padding: 80px 8%;
+  padding: 90px 8%;
   text-align: center;
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 40px;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .team-card {
   background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.team-card img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
 }
 
 .team-card:hover {
-  transform: scale(1.06);
+  transform: translateY(-12px) scale(1.05);
 }
 
-/* CTA */
+.team-card img {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* ================= CALL TO ACTION ================= */
 .cta {
-  padding: 70px 8%;
-  background: linear-gradient(to right, #0072ff, #00d4ff);
+  padding: 90px 8%;
+  background: linear-gradient(135deg, #0072ff, #00d4ff);
   text-align: center;
   color: white;
+  border-radius: 30px;
+  margin: 60px 6%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  animation: fadeUp 1.2s ease;
 }
 
 .cta button {
-  padding: 12px 28px;
-  margin-top: 20px;
+  padding: 14px 34px;
+  margin-top: 22px;
   background: #00234d;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1.2rem;
+  border-radius: 10px;
+  font-size: 1.25rem;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cta button:hover {
+  background: #001833;
+  transform: translateY(-5px);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .about-story {
+    flex-direction: column;
+    text-align: center;
+  }
+  .stats {
+    flex-direction: column;
+    gap: 25px;
+  }
 }

@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       {/* ================= Banner Carousel ================= */}
-      <div id="bannerCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="1500" >
+      <div id="bannerCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" >
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img 
@@ -66,6 +66,7 @@ const Home = () => {
 
 
       {/* ================= Products Sections ================= */}
+      <div className="home-product-grid">
       <div className="home-sections container">
         <section className="product-section">
           <h2 className="section-title">Shirts Collection</h2>
@@ -76,6 +77,7 @@ const Home = () => {
           <h2 className="section-title">Pants Collection</h2>
           <Pent />
         </section>
+      </div>
       </div>
 
       {/* ================= Testimonials ================= */}

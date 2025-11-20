@@ -35,7 +35,7 @@ function App() {
     <CartProvider>
       <Router>
         <Navbar />
-       
+        
 
         {/* 🔥 Toaster Notifier */}
         <Toaster position="top-right" reverseOrder={false} />

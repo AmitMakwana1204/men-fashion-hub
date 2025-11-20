@@ -109,6 +109,15 @@ body {
   margin-top: 40px;
 }
 
+/* ================= Home Product Grid Fix ================= */
+.home-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;      /* gap perfect */
+  padding: 10px;
+}
+
+
 .product-section {
   padding: 25px;
   margin-top: 40px;
