@@ -10,9 +10,6 @@
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
-  },
-  "engines": {
-  "node": "18"
 },
   "dependencies": {
     "bootstrap": "^5.3.8",
