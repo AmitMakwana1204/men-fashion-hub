@@ -11,6 +11,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "engines": {
+  "node": "18"
+},
   "dependencies": {
     "bootstrap": "^5.3.8",
     "react": "^19.2.0",
