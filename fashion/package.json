@@ -2,7 +2,7 @@
   "name": "fashion",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://AmitMakwana1204.github.io/Men-Fashion-Hub",
+  "homepage": "https://github.com/AmitMakwana1204/men-fashion-hub",
   "type": "module",
   "scripts": {
     "dev": "vite",
