@@ -62,8 +62,9 @@ const SignupForm = () => {
 
       setLoading(true);
 
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
       const response = await fetch(
-        "/api/users/register",
+        `${API_URL}/api/users/register`,
         {
           method: "POST",
 
