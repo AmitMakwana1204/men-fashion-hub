@@ -8,6 +8,13 @@ import { useCart } from "../../Pages/Cartcontext";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { totalItems } = useCart();
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  };
 
   return (
     <nav className="navbar">
@@ -53,9 +60,16 @@ const Navbar = () => {
 
       {/* Right side: Login + Cart */}
       <div className="nav-login-cart">
-        <Link to="/login">
-          <button className="login-btn">Login</button>
-        </Link>
+        {user ? (
+          <div className="nav-user">
+            <span className="user-name">Hi, {user.name.split(' ')[0]}</span>
+            <button className="login-btn" onClick={handleLogout}>Logout</button>
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className="login-btn">Login</button>
+          </Link>
+        )}
         <Link to="/cart" className="cart-box">
           <img src={cart} alt="Cart" />
           <span className="cart-count">{totalItems}</span>

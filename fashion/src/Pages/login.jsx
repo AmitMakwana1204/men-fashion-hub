@@ -1,16 +1,38 @@
 import React, { useState } from 'react';
 import './login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignupForm.css';
+import toast from 'react-hot-toast';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Username:', username);
-    console.log('Password:', password);
+    try {
+      const response = await fetch('http://localhost:5000/api/users/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        toast.success('Login successful!');
+        console.log('User Logged In:', data);
+        navigate('/');
+      } else {
+        toast.error(data.message || 'Login failed');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      toast.error('Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -19,10 +41,10 @@ const Login = () => {
 
         <form onSubmit={handleSubmit}>
           {/* form */}
-          <input type="text"
-            placeholder="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+          <input type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
           <input

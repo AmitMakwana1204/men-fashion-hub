@@ -112,6 +112,18 @@ body {
   gap: 18px;
 }
 
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #002244;
+  font-size: 14px;
+}
+
 /* Login Button */
 .nav-login-cart button {
   padding: 9px 18px;

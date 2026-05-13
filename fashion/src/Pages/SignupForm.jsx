@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SignupForm.css';
+import toast from 'react-hot-toast';
 
 const SignupForm = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
@@ -14,10 +17,31 @@ const SignupForm = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
-    // Add form validation and API submission logic here
+    const { firstName, lastName, email, password } = form;
+    const name = `${firstName} ${lastName}`;
+
+    try {
+      const response = await fetch('http://localhost:5000/api/users/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success('Registration successful!');
+        console.log('User Registered:', data);
+        navigate('/login');
+      } else {
+        toast.error(data.message || 'Registration failed');
+      }
+    } catch (error) {
+      console.error('Error during signup:', error);
+      toast.error('Something went wrong. Please try again.');
+    }
   };
 
   return (
