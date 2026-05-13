@@ -1,95 +1,123 @@
-/* ---------------------------------------------------
-   🔥 GLOBAL RESET
---------------------------------------------------- */
+/* ===================================================
+   GLOBAL RESET
+=================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-}
-
-/* ---------------------------------------------------
-   🔥 NAVBAR (Premium Gradient + Glass)
---------------------------------------------------- */
+/* ===================================================
+   NAVBAR
+=================================================== */
 .navbar {
   width: 100%;
-  height: 75px;
-  padding: 0 30px;
+  height: 78px;
+
+  padding: 0 32px;
+
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
   position: fixed;
   top: 0;
+  left: 0;
+
   z-index: 1000;
 
-  /* Premium gradient + glass */
   background: linear-gradient(
-      rgb(183, 224, 253),
-      rgba(117, 201, 249, 0.981)
+      rgba(183,224,253,0.95),
+      rgba(117,201,249,0.92)
     ),
     #e3efff;
 
   backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.4);
+
+  box-shadow:
+    0 6px 25px rgba(0,0,0,0.12);
 
   transition: 0.3s ease-in-out;
 }
 
-/* ---------------------------------------------------
-   🔥 LOGO STYLE
---------------------------------------------------- */
+/* ===================================================
+   LOGO
+=================================================== */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 15px;
+
+  gap: 14px;
+
+  text-decoration: none;
 }
 
 .nav-logo img {
   width: 55px;
   height: 55px;
+
   border-radius: 50%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+
+  object-fit: cover;
+
+  box-shadow:
+    0 3px 12px rgba(0,0,0,0.2);
 }
 
 .nav-logo p {
-  font-size: 1.7rem;
-  font-weight: 700;
+  font-size: 1.6rem;
+  font-weight: 800;
+
   color: #002244;
-  letter-spacing: 1px;
+
+  letter-spacing: 0.5px;
 }
 
-/* ---------------------------------------------------
-   🔥 MENU ITEMS
---------------------------------------------------- */
+/* ===================================================
+   MENU
+=================================================== */
 .nav-menu {
-  margin-left: auto;
   display: flex;
-  gap: 40px;
+  align-items: center;
+
+  gap: 38px;
+
   list-style: none;
-  
 }
 
+/* MENU LINK */
 .nav-menu li a {
   text-decoration: none;
-  font-size: 20px;
+
+  font-size: 18px;
   font-weight: 600;
+
   color: #002a5c;
+
   position: relative;
+
   transition: 0.3s ease;
 }
 
-/* Elegant Underline Animation */
+/* UNDERLINE EFFECT */
 .nav-menu li a::after {
   content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
   width: 0%;
   height: 3px;
+
   background: #0056ff;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
+
+  border-radius: 10px;
+
   transition: 0.3s ease;
 }
 
@@ -98,102 +126,163 @@ body {
   width: 100%;
 }
 
-.nav-menu li a:hover {
+.nav-menu li a:hover,
+.nav-menu li .active {
   color: #0056ff;
 }
 
-/* ---------------------------------------------------
-   🔥 Login + Cart
---------------------------------------------------- */
+/* ===================================================
+   RIGHT SECTION
+=================================================== */
 .nav-login-cart {
-  margin-left: 30px;
   display: flex;
   align-items: center;
+
   gap: 18px;
 }
 
+/* ===================================================
+   USER
+=================================================== */
 .nav-user {
   display: flex;
   align-items: center;
+
   gap: 12px;
 }
 
 .user-name {
-  font-weight: 600;
-  color: #002244;
   font-size: 14px;
+  font-weight: 700;
+
+  color: #002244;
 }
 
-/* Login Button */
-.nav-login-cart button {
-  padding: 9px 18px;
-  font-size: 16px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #0056ff, #003cbf);
-  color: white;
+/* ===================================================
+   LOGIN BUTTON
+=================================================== */
+.login-btn {
+  padding: 10px 18px;
+
   border: none;
-  font-weight: 600;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #0056ff,
+    #003cbf
+  );
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
   transition: 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 86, 255, 0.3);
+
+  box-shadow:
+    0 4px 14px rgba(0,86,255,0.28);
 }
 
-.nav-login-cart button:hover {
+.login-btn:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #003cbf, #002a7d);
+
+  background: linear-gradient(
+    135deg,
+    #003cbf,
+    #002a7d
+  );
+
+  box-shadow:
+    0 8px 18px rgba(0,86,255,0.35);
 }
 
-/* Cart Icon */
+/* ===================================================
+   CART
+=================================================== */
 .cart-box {
   position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* CART IMAGE */
 .cart-box img {
-  width: 45px;
+  width: 42px;
+
   transition: 0.3s ease;
 }
 
 .cart-box img:hover {
-  transform: scale(1.15);
+  transform: scale(1.12);
 }
 
-/* Cart Count */
+/* CART COUNT */
 .cart-count {
   position: absolute;
+
   top: -6px;
   right: -8px;
+
+  min-width: 22px;
+  height: 22px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background: #ff2020;
+
   color: white;
-  font-size: 12px;
-  padding: 3px 5px;
+
+  font-size: 11px;
+  font-weight: 700;
+
   border-radius: 50%;
-  border: 2px solid rgb(0, 0, 0);
-  box-shadow: 0 0 8px #000000;
+
+  border: 2px solid #fff;
+
+  box-shadow:
+    0 0 10px rgba(0,0,0,0.25);
 }
 
-/* ---------------------------------------------------
-   🔥 MOBILE RESPONSIVE
---------------------------------------------------- */
+/* ===================================================
+   HAMBURGER
+=================================================== */
 .hamburger {
   display: none;
-  width: 35px;
+
+  width: 34px;
   height: 28px;
+
   flex-direction: column;
   justify-content: space-between;
+
   cursor: pointer;
-  margin-left: auto;
 }
 
+/* HAMBURGER LINES */
 .hamburger span {
-  height: 4px;
   width: 100%;
+  height: 4px;
+
   background: #002244;
-  border-radius: 5px;
+
+  border-radius: 10px;
+
   transition: 0.4s ease;
 }
 
-/* Hamburger animation */
+/* ANIMATION */
 .hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 6px);
+  transform:
+    rotate(45deg)
+    translate(6px, 7px);
 }
 
 .hamburger.open span:nth-child(2) {
@@ -201,40 +290,98 @@ body {
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+  transform:
+    rotate(-45deg)
+    translate(8px, -8px);
 }
 
-/* Mobile Slider Menu */
+/* ===================================================
+   MOBILE
+=================================================== */
 @media (max-width: 900px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
   .hamburger {
     display: flex;
   }
 
+  /* MOBILE MENU */
   .nav-menu {
     position: fixed;
+
+    top: 78px;
     left: -100%;
-    top: 75px;
-    flex-direction: column;
-    width: 65%;
+
+    width: 72%;
     height: 100vh;
-    background: linear-gradient(135deg, #d8eaff, #bad7ff);
-    padding-top: 40px;
-    padding-left: 30px;
-    gap: 22px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 28px;
+
+    padding: 45px 30px;
+
+    background: linear-gradient(
+      135deg,
+      #d8eaff,
+      #bad7ff
+    );
+
     transition: 0.4s ease;
   }
 
   .nav-menu.active {
     left: 0;
-    box-shadow: 4px 0 15px rgba(0,0,0,0.2);
+
+    box-shadow:
+      6px 0 20px rgba(0,0,0,0.18);
   }
 
-  .nav-login-cart {
-    display: none;
-    display: flex !important;
-    position: absolute;
-    right: 20px;
-    top: 78px;
-    gap: 15px;
+  .nav-menu li a {
+    font-size: 20px;
   }
+
+  /* RIGHT SECTION */
+  .nav-login-cart {
+    position: absolute;
+
+    right: 18px;
+    top: 88px;
+
+    gap: 12px;
+  }
+
+  .login-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .cart-box img {
+    width: 38px;
+  }
+
+}
+
+/* ===================================================
+   SMALL MOBILE
+=================================================== */
+@media (max-width: 500px) {
+
+  .nav-logo p {
+    font-size: 1.2rem;
+  }
+
+  .nav-logo img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .nav-menu {
+    width: 80%;
+  }
+
 }

@@ -1,87 +1,179 @@
+/* ================= FOOTER ================= */
 .footer {
   background: #0e1a2a;
-  color: #fff;
-  padding-top: 50px;
-  margin-top: 50px;
+
+  color: white;
+
+  margin-top: 60px;
+
   font-family: "Poppins", sans-serif;
+
+  overflow: hidden;
 }
 
-/* TOP SECTION */
+/* ================= TOP SECTION ================= */
 .footer-top {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-  padding: 0 8%;
-  margin-bottom: 40px;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 45px;
+
+  padding: 60px 8% 40px;
 }
 
+/* ================= BRAND ================= */
 .footer-brand h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+
   color: #4db8ff;
-  margin-bottom: 10px;
+
+  margin-bottom: 14px;
 }
 
 .footer-brand p {
   font-size: 15px;
+
   color: #b8c7d6;
-  line-height: 1.6;
+
+  line-height: 1.8;
 }
 
+/* ================= HEADINGS ================= */
 .footer-links h3,
 .footer-help h3,
 .footer-social h3 {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  margin-bottom: 18px;
+
   color: #4db8ff;
 }
 
+/* ================= LISTS ================= */
 .footer-links ul,
 .footer-help ul {
   list-style: none;
   padding: 0;
 }
 
+/* ================= LIST ITEMS ================= */
 .footer-links ul li,
 .footer-help ul li {
-  margin: 8px 0;
+  margin: 12px 0;
+
   color: #d5e2ee;
+
+  transition: 0.3s ease;
 }
 
+/* ================= LINKS ================= */
 .footer-links ul li a {
   color: #d5e2ee;
+
   text-decoration: none;
+
+  transition: 0.3s ease;
 }
 
+.footer-links ul li a:hover,
+.footer-help ul li:hover {
+  color: #4db8ff;
+
+  padding-left: 5px;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+/* ================= SOCIAL LINK ================= */
 .social-icons a {
-  display: inline-block;
-  font-size: 14px;
-  margin-right: 12px;
-  padding: 8px 10px;
-  color: #fff;
-  background: rgba(255,255,255,0.05);
-  border-radius: 8px;
-  text-decoration: none;
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255,255,255,0.08);
+
+  border-radius: 12px;
+
+  transition: 0.3s ease;
 }
 
+.social-icons a:hover {
+  background: #4db8ff;
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 8px 20px rgba(77,184,255,0.3);
+}
+
+/* ================= ICON IMAGE ================= */
+.social-icons img {
+  width: 26px;
+  height: 26px;
+
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+/* ================= BOTTOM ================= */
 .footer-bottom {
   text-align: center;
-  padding: 15px;
+
+  padding: 18px;
+
   background: #09121e;
+
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ================= COPYRIGHT ================= */
+.footer-bottom p {
   font-size: 14px;
+
   color: #9fb1c1;
+
+  letter-spacing: 0.5px;
 }
 
-.social-icons img {
-  width: 28px;
-  height: 28px;
-  margin-right: 14px;
-  transition: 0.3s ease;
-  filter: brightness(100%);
-  margin-right: 0px;
-}
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
 
-.social-icons img:hover {
-  transform: scale(1.18);
-  filter: brightness(150%);
-}
+  .footer-top {
+    gap: 35px;
 
+    padding: 50px 20px 30px;
+  }
+
+  .footer-brand h2 {
+    font-size: 1.8rem;
+  }
+
+  .footer-links h3,
+  .footer-help h3,
+  .footer-social h3 {
+    font-size: 1.1rem;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+
+}

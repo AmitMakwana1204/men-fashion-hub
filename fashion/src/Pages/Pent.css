@@ -10,23 +10,27 @@
   animation: fadeIn 0.8s ease-in-out;
 }
 
-
 /* FADE ANIMATION */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* PRODUCT CARD */
 .pant-card {
   background: #ffffff;
-  padding: 16px;
-  margin-bottom: 30px;
   border-radius: 16px;
-  padding: 12px;
+  padding: 14px;
   text-align: center;
   border: 0.5px solid #e5e5e5;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: 0.35s ease;
   position: relative;
   overflow: hidden;
@@ -34,28 +38,46 @@
 
 .pant-card:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
-/* TAG */
-.pant-card::before {
-  content: "BESTSELLER";
+/* CATEGORY BADGE */
+.pant-badge {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #ff2d55;
+  background: #111;
   color: #fff;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 6px;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 20px;
   font-weight: 600;
-  letter-spacing: 1px;
-  opacity: 0.9;
   z-index: 2;
 }
 
+/* WISHLIST */
+.wishlist-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.3s ease;
+}
+
+.wishlist-icon:hover {
+  transform: scale(1.2);
+}
+
+/* IMAGE BOX */
+.pant-image-box {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
 /* IMAGE */
-.pant-card img {
+.pant-image-box img {
   width: 100%;
   height: 280px;
   object-fit: cover;
@@ -67,46 +89,85 @@
   transform: scale(1.07);
 }
 
+/* INFO */
+.pant-info {
+  margin-top: 14px;
+}
+
 /* NAME */
-.pant-card h6 {
-  margin-top: 12px;
-  font-size: 17px;
+.pant-info h4 {
+  font-size: 16px;
   font-weight: 600;
   color: #1c1c1c;
+  line-height: 1.4;
+  min-height: 45px;
 }
 
 /* PRICE */
-.pant-card p {
+.pant-price {
   color: #0070ff;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: bold;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
-/* BUTTON */
-.pant-card button {
-  padding: 10px 15px;
-  background: #007bff;
+/* BUTTON GROUP */
+.pant-btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* BUTTON COMMON */
+.cart-btn,
+.buy-btn {
+  flex: 1;
+  padding: 10px;
   border: none;
-  color: white;
   border-radius: 10px;
   cursor: pointer;
-  width: 100%;
-  margin-top: 15px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   transition: 0.3s ease;
 }
 
-.pant-card button:hover {
+/* CART BUTTON */
+.cart-btn {
+  background: #007bff;
+  color: white;
+}
+
+.cart-btn:hover {
   background: #005cd1;
   transform: translateY(-3px);
   box-shadow: 0 5px 18px rgba(0, 123, 255, 0.4);
 }
 
+/* BUY BUTTON */
+.buy-btn {
+  background: #111;
+  color: white;
+}
+
+.buy-btn:hover {
+  background: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+}
+
 /* MOBILE */
 @media (max-width: 480px) {
-  .pant-card img {
+
+  .pant-image-box img {
     height: 220px;
+  }
+
+  .pant-btn-group {
+    flex-direction: column;
+  }
+
+  .cart-btn,
+  .buy-btn {
+    width: 100%;
   }
 }

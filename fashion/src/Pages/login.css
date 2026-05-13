@@ -1,54 +1,303 @@
+/* ================= GOOGLE FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= PAGE ================= */
 .login-page {
-  display: grid;
-  place-items: center; /* This centers both horizontally and vertically */
-  width: 100vw;
-  height: 100vh; /* Full screen height */
-  background-color: #d4e4f7;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.72),
+      rgba(0,0,0,0.72)
+    ),
+    url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1400");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+/* ================= CONTAINER ================= */
 .login-container {
-  width: 300px;
-  text-align: center;
+  width: 100%;
+  max-width: 420px;
+
+  padding: 40px 35px;
+
+  border-radius: 22px;
+
+  background: rgba(17, 24, 39, 0.88);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.4);
+
+  color: white;
+
+  animation: fadeIn 0.5s ease;
 }
 
+/* ================= BRAND ================= */
+.brand-name {
+  text-align: center;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: #facc15;
+
+  margin-bottom: 30px;
+}
+
+/* ================= INPUT ================= */
 .login-container input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: none;
-  background: #f2f2f2;
-  font-size: 14px;
+
+  padding: 14px 16px;
+
+  margin-bottom: 18px;
+
+  border-radius: 12px;
+
+  border: 1px solid #374151;
+
+  background: #111827;
+
+  color: white;
+
   outline: none;
-  border-radius: 4px;
+
+  font-size: 14px;
+
+  transition: 0.3s;
 }
 
+.login-container input::placeholder {
+  color: #94a3b8;
+}
+
+.login-container input:focus {
+  border-color: #facc15;
+
+  box-shadow:
+    0 0 0 4px rgba(250,204,21,0.15);
+}
+
+/* ================= PASSWORD BOX ================= */
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  margin-bottom: 0;
+}
+
+/* ================= SHOW PASSWORD ================= */
+.show-password {
+  position: absolute;
+
+  right: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  user-select: none;
+}
+
+/* ================= OPTIONS ================= */
+.login-options {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 18px 0 22px;
+
+  font-size: 14px;
+}
+
+/* ================= REMEMBER ================= */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #cbd5e1;
+}
+
+.remember-me input {
+  width: auto;
+
+  margin: 0;
+}
+
+/* ================= FORGOT ================= */
+.forgot-link {
+  color: #facc15;
+
+  text-decoration: none;
+
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= LOGIN BUTTON ================= */
 .login-container button {
   width: 100%;
-  padding: 12px;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
+
+  padding: 14px;
+
   border: none;
+
+  border-radius: 12px;
+
+  background: #facc15;
+
+  color: black;
+
+  font-size: 15px;
+  font-weight: 700;
+
   cursor: pointer;
+
   text-transform: uppercase;
-  border-radius: 4px;
+
+  transition: 0.3s;
 }
 
 .login-container button:hover {
-  background-color: #45a049;
+  transform: translateY(-2px);
+
+  background: #fde047;
+
+  box-shadow:
+    0 10px 20px rgba(250,204,21,0.2);
 }
 
+.login-container button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  text-align: center;
+
+  margin: 24px 0;
+
+  color: #94a3b8;
+
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  width: 40%;
+  height: 1px;
+
+  background: #374151;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* ================= GOOGLE BUTTON ================= */
+.google-btn {
+  background: white !important;
+
+  color: black !important;
+
+  margin-bottom: 15px;
+}
+
+/* ================= SIGNUP ================= */
 .signup-text {
-  margin-top: 15px;
+  text-align: center;
+
+  margin-top: 20px;
+
+  color: #cbd5e1;
+
   font-size: 14px;
-  color: #666;
 }
 
 .signup-text a {
-  color: #4CAF50;
+  margin-left: 6px;
+
+  color: #facc15;
+
   text-decoration: none;
+
+  font-weight: 600;
 }
 
 .signup-text a:hover {
   text-decoration: underline;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+
+  .login-container {
+    padding: 30px 22px;
+  }
+
+  .brand-name {
+    font-size: 24px;
+  }
+
 }

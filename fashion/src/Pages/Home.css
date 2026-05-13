@@ -1,194 +1,360 @@
-/* ================= Global ================= */
+/* ================= GOOGLE FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: #f4f7fe;
+  background: #f5f5f5;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
+/* ================= SECTION TITLE ================= */
 .section-title {
-  font-weight: 800;
   font-size: 32px;
+  font-weight: 800;
+  color: #111827;
   margin-bottom: 25px;
-  text-align: center;
-  letter-spacing: 0.7px;
-  color: #1c1c1c;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* ================= Carousel ================= */
-#bannerCarousel img {
-  height: 75vh;
+/* ================= HERO CAROUSEL ================= */
+.hero-carousel {
+  position: relative;
+}
+
+.carousel-image {
+  height: 88vh;
   object-fit: cover;
-  filter: brightness(82%) contrast(105%);
-  transition: 0.4s ease-in-out;
-  
+  filter: brightness(60%);
 }
 
-#bannerCarousel img:hover {
-  filter: brightness(92%);
+/* ================= CAPTION ================= */
+.carousel-caption {
+  bottom: 25% !important;
 }
 
+.carousel-caption h1 {
+  font-size: 65px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #facc15;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.carousel-caption p {
+  font-size: 20px;
+  color: #f3f4f6;
+  margin-bottom: 25px;
+}
+
+/* ================= SHOP BUTTON ================= */
+.shop-btn {
+  padding: 14px 34px;
+  border: none;
+  border-radius: 12px;
+  background: #facc15;
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.shop-btn:hover {
+  background: #fde047;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(250,204,21,0.3);
+}
+
+/* ================= CAROUSEL CONTROLS ================= */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0,0,0,0.6);
   padding: 22px;
   border-radius: 50%;
-  transition: 0.3s;
 }
 
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
+/* ================= INDICATORS ================= */
 .carousel-indicators button {
-  width: 13px;
-  height: 13px;
-  background-color: #888 !important;
+  width: 12px !important;
+  height: 12px !important;
   border-radius: 50%;
+  background-color: #d1d5db !important;
 }
 
 .carousel-indicators .active {
-  background-color: white !important;
-  width: 14px;
-  height: 14px;
+  background-color: #facc15 !important;
 }
 
-/* ================= Offer Banner ================= */
+/* ================= OFFER BANNER ================= */
 .offer-banner {
-  background: linear-gradient(145deg, #68beff, #5fdaff);
-  color: #fff;
-  margin-top: 10px;
-  border-radius: 15px;
-  padding: 18px;
-  box-shadow: 0 10px 25px rgba(255, 95, 109, 0.3);
-  animation: slideIn 1.2s ease;
+  background: linear-gradient(
+    135deg,
+    #111827,
+    #1f2937
+  );
+
+  color: white;
+  text-align: center;
+  padding: 22px;
+  margin: 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-15px); }
-  to { opacity: 1; transform: translateY(0); }
+.offer-banner h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #facc15;
 }
 
-/* ================= Featured Categories ================= */
+.offer-banner p {
+  color: #d1d5db;
+  margin: 0;
+}
+
+/* ================= FEATURED CATEGORIES ================= */
 .featured-categories {
-  margin-top: 45px;
+  margin-top: 50px;
 }
 
 .feature-btn-wrapper {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin-top: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 
+/* ================= FEATURE BUTTON ================= */
 .feature-btn {
-  padding: 14px 34px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #4e54c8;
-  background: white;
+  min-width: 140px;
+  padding: 14px 30px;
   border: none;
   border-radius: 12px;
+  background: white;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(78, 84, 200, 0.15);
-  transition: all 0.4s ease;
-  letter-spacing: 0.6px;
-  border: 2px solid transparent;
 }
 
 .feature-btn:hover {
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  color: white;
-  transform: translateY(-6px) scale(1.05);
-  border-color: white;
-  box-shadow: 0 15px 30px rgba(78, 84, 200, 0.35);
+  background: #111827;
+  color: #facc15;
+  transform: translateY(-4px);
 }
 
-/* ================= Product Sections ================= */
+/* ================= PRODUCTS ================= */
 .home-sections {
-  margin-top: 40px;
+  margin-top: 50px;
 }
-
-/* ================= Home Product Grid Fix ================= */
-.home-product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;      /* gap perfect */
-  padding: 10px;
-}
-
 
 .product-section {
-  padding: 25px;
-  margin-top: 40px;
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-  animation: fadeUp 1.2s ease;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ================= Testimonials ================= */
-.testimonials {
-  margin-top: 55px;
-}
-
-.testimonial-card {
-  background: rgba(255, 255, 255, 0.75);
+  padding: 30px;
+  margin-bottom: 35px;
   border-radius: 20px;
-  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* ================= SECTION HEADER ================= */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 25px;
-  text-align: center;
+}
+
+/* ================= VIEW ALL ================= */
+.view-all-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #111827;
+  color: #facc15;
   font-weight: 600;
-  font-size: 17px;
-  color: #333;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  transition: all 0.4s ease;
-  border-left: 4px solid #4e54c8;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.view-all-btn:hover {
+  background: #1f2937;
+  transform: translateY(-2px);
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+/* ================= TESTIMONIAL CARD ================= */
+.testimonial-card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+  transition: 0.3s ease;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+  transform: translateY(-6px);
 }
 
-/* ================= Footer ================= */
+.testimonial-card p {
+  color: #374151;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h5 {
+  color: #facc15;
+  font-weight: 700;
+}
+
+/* ================= NEWSLETTER ================= */
+.newsletter {
+  background: #111827;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.newsletter h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #facc15;
+}
+
+/* ================= NEWSLETTER BOX ================= */
+.newsletter-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.newsletter-box input {
+  width: 320px;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+}
+
+.newsletter-box button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #facc15;
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.newsletter-box button:hover {
+  background: #fde047;
+}
+
+/* ================= FOOTER ================= */
 .footer {
   background: #0b0b0b;
-  color: #eee;
-  font-size: 16px;
-  letter-spacing: 0.6px;
-  border-top: 4px solid #444;
-  margin-top: 50px;
-  padding: 20px;
+  color: #d1d5db;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.footer h3 {
+  color: #facc15;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 12px;
 }
 
 .footer p {
-  margin: 0;
+  margin-bottom: 15px;
 }
 
-/* ================= Responsive ================= */
-@media (max-width: 767px) {
-  #bannerCarousel img {
-    height: 50vh;
+/* ================= FOOTER LINKS ================= */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #f3f4f6;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #facc15;
+}
+
+/* ================= COPYRIGHT ================= */
+.copyright {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  .carousel-image {
+    height: 60vh;
   }
 
-  .feature-btn {
-    font-size: 17px;
-    padding: 12px 24px;
+  .carousel-caption {
+    bottom: 18% !important;
+  }
+
+  .carousel-caption h1 {
+    font-size: 36px;
+  }
+
+  .carousel-caption p {
+    font-size: 15px;
   }
 
   .section-title {
     font-size: 24px;
   }
 
-  .testimonial-card {
-    font-size: 14px;
+  .offer-banner h3 {
+    font-size: 20px;
   }
+
+  .newsletter h2 {
+    font-size: 24px;
+  }
+
+  .newsletter-box input {
+    width: 100%;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
 }

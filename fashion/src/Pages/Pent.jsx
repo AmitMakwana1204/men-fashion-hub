@@ -1,124 +1,160 @@
-import React from 'react';
+import React, { useState } from "react";
 import { useCart } from "./Cartcontext";
-import './Pent.css';
+import "./Pent.css";
 
 const products = [
   {
     id: "p1",
-    name: "KOTTY Mens Regular Fit | Classic Design with Stylish Look | Day Comfort | Mid Rise Stretchable Jeans",
+    name: "KOTTY Mens Regular Fit Jeans",
     price: 499,
-    image: "https://m.media-amazon.com/images/I/61dFcpPdJkL._SY741_.jpg",
+    image:
+      "https://m.media-amazon.com/images/I/61dFcpPdJkL._SY741_.jpg",
+    category: "Regular Fit",
   },
+
   {
     id: "p2",
-    name: "Men Jeans || Jeans for Men || Cargo Jeans",
+    name: "Cargo Jeans For Men",
     price: 599,
-    image: "https://m.media-amazon.com/images/I/815gdBdQIOL._SY741_.jpg",
+    image:
+      "https://m.media-amazon.com/images/I/815gdBdQIOL._SY741_.jpg",
+    category: "Cargo",
   },
+
   {
     id: "p3",
-    name: "Urbano Fashion Men Mid Rise Slim Fit Washed Jeans Stretchable",
+    name: "Urbano Slim Fit Washed Jeans",
     price: 549,
-    image: "https://m.media-amazon.com/images/I/61Frlc0VnWL._SY741_.jpg",
+    image:
+      "https://m.media-amazon.com/images/I/61Frlc0VnWL._SY741_.jpg",
+    category: "Slim Fit",
   },
+
   {
     id: "p5",
-    name: "INKAST Men's Solid Regular Fit Jeans",
+    name: "INKAST Regular Fit Jeans",
     price: 399,
-    image: "https://m.media-amazon.com/images/I/81iqWYMhlnL._SX569_.jpg",
+    image:
+      "https://m.media-amazon.com/images/I/81iqWYMhlnL._SX569_.jpg",
+    category: "Casual",
   },
+
   {
     id: "p6",
-    name: "TAGAS Jeans for Men | Regular Fit Denim Jeans | Mens Jeans Pant",
+    name: "TAGAS Denim Jeans",
     price: 699,
-    image: "https://m.media-amazon.com/images/I/51ZsLj2BwcL._SY741_.jpg",
+    image:
+      "https://m.media-amazon.com/images/I/51ZsLj2BwcL._SY741_.jpg",
+    category: "Denim",
   },
+
   {
     id: "p7",
-    name: "London Hills Tapered Fit Mid Rise Classic Stretchable Jeans | Casual Denim Jeans for Men | Slim Fit Jeans for Men Blue",
+    name: "London Hills Slim Fit Jeans",
     price: 699,
-    image: "https://m.media-amazon.com/images/I/61Jl2TZzurL._SY741_.jpg",
+    image:
+      "https://m.media-amazon.com/images/I/61Jl2TZzurL._SY741_.jpg",
+    category: "Premium",
   },
-  {
-    id: "p8",
-    name: "Urbano Fashion Men's Loose Mid Rise Baggy Fit Washed Cargo Jeans with 6 Pockets Non-Stretchable",
-    price: 999,
-    image: "https://m.media-amazon.com/images/I/719H9lrAnAL._SY741_.jpg",
-  },
-  {
-    id: "p9",
-    name: "GRECIILOOKS Baggy Cargo Jeans for Men – Mid Rise Relaxed Fit Denim Cargo Pants | Streetwear Utility Pant with Multiple Pockets",
-    price: 699,
-    image: "https://m.media-amazon.com/images/I/613hmtm815L._SY741_.jpg",
-  },
-  {
-    id: "p10",
-    name: "London Hills Men Jeans || Baggy Fit Jeans for Men || Loose Fit High Rise Denim || Stretchable Casual Wear Jeans",
-    price: 499,
-    image: "https://m.media-amazon.com/images/I/614ClgR9koL._SX679_.jpg",
-  },
-  {
-    id: "p11",
-    name: "Men Jeans || Jeans for Men || Men Jeans Pants || Jeans Pant for Men",
-    price: 499,
-    image: "https://m.media-amazon.com/images/I/51L3klSDodL._SY741_.jpg",
-  },
-  {
-    id: "p12",
-    name: "Mehrang Men's Stretchable Formal Pant Trousers | Stylish Slim Fit Men's Wear Trousers for Office or Party",
-    price: 699,
-    image: "https://m.media-amazon.com/images/I/71VcG9VD23L._SX679_.jpg",
-  },
-  {
-    id: "p13",
-    name: "Dockstreet Men Baggy Denim Jeans in Pure 100% Cotton Denim || Stretchable Jeans || Unisex Designs",
-    price: 899,
-    image: "https://m.media-amazon.com/images/I/61f8ZKHW-IL._SY741_.jpg",
-  },
-  {
-    id: "p14",
-    name: "Lymio Men Cargo || Men Cargo Pants Cotton || Casual Cargos Pant",
-    price: 899,
-    image: "https://m.media-amazon.com/images/I/61u5oAftaeL._SY741_.jpg",
-  },
-  {
-    id: "p15",
-    name: "JVX Jeans for Men || Men Jeans || Men Jeans Pants || Denim Jeans",
-    price: 699,
-    image: "https://m.media-amazon.com/images/I/51ljBk8w8ML._SY741_.jpg",
-  },
-  {
-    id: "p16",
-    name: "QNIM Men Jeans || Jeans for Men || Cargo Pant",
-    price: 799,
-    image: "https://m.media-amazon.com/images/I/71Y1Wrz2lpL._SY741_.jpg",
-  },
-  {
-    id: "p17",
-    name: "GRECIILOOKS Men's Relaxed Fit Straight Leg Denim Jeans | Casual High-Waist Baggy Pant with Drawstring",
-    price: 599,
-    image: "https://m.media-amazon.com/images/I/71aDdbToIdL._SY741_.jpg",
-  },
-  
 ];
 
 const Pent = () => {
-  const { addToCart } = useCart(); // ✅ Added this line
+
+  const { addToCart } = useCart();
+
+  const [wishlist, setWishlist] = useState([]);
+
+  // ================= WISHLIST =================
+  const toggleWishlist = (id) => {
+
+    setWishlist((prev) =>
+      prev.includes(id)
+        ? prev.filter((item) => item !== id)
+        : [...prev, id]
+    );
+
+  };
 
   return (
 
- <div className="pant-container">
+    <div className="pant-container">
+
       {products.map((product) => (
-        <div key={product.id} className="pant-card">
-          <img src={product.image} alt={product.name} />
-          <h6>{product.name}</h6>
-          <p>₹{product.price}</p>
-          <button onClick={() => addToCart(product)}>
-            Add to Cart
-          </button>
+
+        <div
+          key={product.id}
+          className="pant-card"
+        >
+
+          {/* ================= CATEGORY ================= */}
+          <span className="pant-badge">
+            {product.category}
+          </span>
+
+          {/* ================= WISHLIST ================= */}
+          <span
+            className="wishlist-icon"
+            onClick={() =>
+              toggleWishlist(product.id)
+            }
+          >
+            {wishlist.includes(product.id)
+              ? "❤️"
+              : "🤍"}
+          </span>
+
+          {/* ================= IMAGE ================= */}
+          <div className="pant-image-box">
+
+            <img
+              src={product.image}
+              alt={product.name}
+              loading="lazy"
+            />
+
+          </div>
+
+          {/* ================= INFO ================= */}
+          <div className="pant-info">
+
+            <h4>{product.name}</h4>
+
+            <p className="pant-price">
+              ₹{product.price}
+            </p>
+
+            {/* ================= BUTTONS ================= */}
+            <div className="pant-btn-group">
+
+              <button
+                className="cart-btn"
+                onClick={() =>
+                  addToCart(product)
+                }
+              >
+                Add To Cart
+              </button>
+
+              <button
+                className="buy-btn"
+                onClick={() => {
+                  addToCart(product);
+                  alert("Proceeding to checkout");
+                }}
+              >
+                Buy Now
+              </button>
+
+            </div>
+
+          </div>
+
         </div>
+
       ))}
+
     </div>
+
   );
 };
 

@@ -1,73 +1,101 @@
-/* ---------------------
-   Global Reset
----------------------- */
+/* ================= GLOBAL RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  min-height: 100%;
-  font-family: "Poppins", Arial, sans-serif;
-  background-color: #f5f7fa;
+/* ================= ROOT ================= */
+html {
+  scroll-behavior: smooth;
 }
 
-/* ---------------------
-   Navbar fixed overlap fix
----------------------- */
 body {
-  padding-top: 80px; /* Matches navbar height */
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  background: #f5f7fa;
+
+  color: #222;
+
+  overflow-x: hidden;
+
+  padding-top: 80px;
 }
 
-/* ---------------------
-   Smooth transitions
----------------------- */
-a, button, input {
+/* ================= LINKS ================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================= BUTTONS & INPUTS ================= */
+button,
+input,
+textarea {
+  font-family: inherit;
   transition: 0.3s ease;
 }
 
-/* ---------------------
-   Scrollbar style
----------------------- */
+/* ================= IMAGES ================= */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ================= LIST ================= */
+ul {
+  list-style: none;
+}
+
+/* ================= SCROLLBAR ================= */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #dfe6ed;
+  background: #e5e7eb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #9bbad1;
-  border-radius: 10px;
+  background: #9ca3af;
+  border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7d9fbe;
+  background: #6b7280;
 }
 
-/* ---------------------
-   Page container (optional)
----------------------- */
+/* ================= PAGE LAYOUT ================= */
 .page-layout {
   width: 100%;
   max-width: 1300px;
+
   margin: 0 auto;
-  padding: 10px;
+
+  padding: 10px 15px;
 }
 
-/* ---------------------
-   Global heading style
----------------------- */
-h1, h2, h3 {
-  color: #222;
+/* ================= GLOBAL HEADINGS ================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #111827;
+  font-weight: 700;
 }
 
-/* ---------------------
-   Utility classes
----------------------- */
+/* ================= PARAGRAPH ================= */
+p {
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* ================= UTILITY CLASSES ================= */
 .center {
   display: flex;
   justify-content: center;
@@ -78,15 +106,116 @@ h1, h2, h3 {
   text-align: center;
 }
 
-/* ---------------------
-   Mobile fix
----------------------- */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================= COMMON BUTTON ================= */
+.primary-btn {
+  padding: 12px 24px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #111827;
+
+  color: #facc15;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #1f2937;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ================= CARD STYLE ================= */
+.card {
+  background: white;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.08);
+
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* ================= INPUT STYLE ================= */
+.input-field {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 15px;
+}
+
+.input-field:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 8px rgba(37,99,235,0.3);
+}
+
+/* ================= SECTION SPACING ================= */
+.section-space {
+  padding: 70px 0;
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
+
   body {
     padding-top: 70px;
   }
 
   .page-layout {
-    padding: 5px;
+    padding: 8px;
   }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
 }
