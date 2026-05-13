@@ -22,7 +22,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const user = JSON.parse(
-    localStorage.getItem("user")
+    localStorage.getItem("user") || sessionStorage.getItem("user") || "null"
   );
 
   /* ================= LOGOUT ================= */
@@ -30,6 +30,8 @@ const Navbar = () => {
 
     localStorage.removeItem("user");
     localStorage.removeItem("token");
+    sessionStorage.removeItem("user");
+    sessionStorage.removeItem("token");
 
     navigate("/login");
 

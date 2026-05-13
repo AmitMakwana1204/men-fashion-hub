@@ -44,7 +44,7 @@ function ScrollToTop() {
 const ProtectedRoute = ({ children }) => {
 
   const isLogged =
-    localStorage.getItem("user");
+    localStorage.getItem("user") || sessionStorage.getItem("user");
 
   return isLogged
     ? children

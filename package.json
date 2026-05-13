@@ -1,0 +1,12 @@
+{
+  "name": "men-fashion-hub",
+  "version": "1.0.0",
+  "description": "Root package for deployment",
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd fashion && npm install",
+    "build-frontend": "cd fashion && npm run build",
+    "build": "npm run install-backend && npm run install-frontend && npm run build-frontend",
+    "start": "cd backend && node server.js"
+  }
+}
