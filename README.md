@@ -19,7 +19,3 @@ Project fully responsive che ane modern UI/UX principles follow kare che.
 👕 Product Listing Page
 
 🛒 Add to Cart Functionality
-
-📄 Product Details Page
-
-📱 Fully Responsive Design
