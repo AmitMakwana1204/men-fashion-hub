@@ -23,7 +23,3 @@ Project fully responsive che ane modern UI/UX principles follow kare che.
 📄 Product Details Page
 
 📱 Fully Responsive Design
-
-⚡ Fast loading & clean UI
-
-
